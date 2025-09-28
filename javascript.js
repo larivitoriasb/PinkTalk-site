@@ -5,7 +5,7 @@ const titles = document.querySelectorAll('.glow-title');
 
 titles.forEach(title => {
   title.addEventListener('mouseenter', () => {
-    title.style.textShadow = '0 0 10px #fd027fff, 0 0 20px #fd03beff, 0 0 30px #fd0284ff';
+    title.style.textShadow = '0 0 12px #fd027fff, 0 0 24px #fd03beff, 0 0 36px #fd0284ff';
     title.style.transition = 'all 0.3s ease';
   });
   title.addEventListener('mouseleave', () => {
@@ -51,12 +51,12 @@ topBtn.style.display = 'none';
 topBtn.style.position = 'fixed';
 topBtn.style.bottom = '20px';
 topBtn.style.right = '20px';
-topBtn.style.padding = '10px 15px';
+topBtn.style.padding = '12px 16px';
 topBtn.style.border = 'none';
-topBtn.style.borderRadius = '8px';
+topBtn.style.borderRadius = '12px';
 topBtn.style.backgroundColor = '#ff69b4';
 topBtn.style.color = 'white';
-topBtn.style.fontSize = '18px';
+topBtn.style.fontSize = '20px';
 topBtn.style.cursor = 'pointer';
 topBtn.style.boxShadow = '0 5px 15px rgba(255,182,193,0.5)';
 document.body.appendChild(topBtn);
@@ -74,12 +74,12 @@ topBtn.addEventListener('click', () => {
 });
 
 // ===========================
-// 4. Brilho animado no logo (opcional)
+// 4. Brilho animado no logo
 // ===========================
 const logo = document.querySelector('.logo');
 if(logo){
   setInterval(() => {
-    logo.style.textShadow = `0 0 10px #ff0582ff, 0 0 20px #ffb6c1, 0 0 30px #ffc0cb`;
+    logo.style.textShadow = `0 0 12px #ff0582ff, 0 0 24px #ffb6c1, 0 0 36px #ffc0cb`;
     setTimeout(() => {
       logo.style.textShadow = 'none';
     }, 800);
@@ -96,6 +96,8 @@ if(glitterContainer){
     glitter.classList.add('glitter');
     glitter.style.left = Math.random() * glitterContainer.offsetWidth + 'px';
     glitter.style.top = Math.random() * glitterContainer.offsetHeight + 'px';
+    glitter.style.width = 6 + Math.random()*4 + 'px'; // glitter variável
+    glitter.style.height = glitter.style.width;
     glitter.style.animationDuration = (2 + Math.random() * 3) + 's';
     glitterContainer.appendChild(glitter);
   }
